@@ -1,0 +1,79 @@
+Connecting to the MongoDB database hosted on MongoLabs:
+
+$ mongo ds037977.mongolab.com:37977/events -u assessment -p assessmentEvents2014
+
+> show collections
+
+  customers
+  documents
+  event
+  eventlist
+  events
+  system.indexes
+  system.users
+  things
+  users
+
+> db.event.find()
+
+  {
+    "_id" : ObjectId("55c80223f071940300b116fb"),
+    "from" : ISODate("2012-01-01T00:00:00Z"),
+    "to" : ISODate("2013-01-02T00:00:00Z"),
+    "description" : "A picnic",
+    "participants" : [
+      "larry",
+      "barry",
+      "harry"
+    ],
+    "title" : "firstEvent",
+    "location" : "Strawberry Fields"
+  }
+
+  {
+    "_id" : ObjectId("55c80d3ecac20cdf0ab7cf36"),
+    "from" : ISODate("2012-01-01T00:00:00Z"),
+    "to" : ISODate("2013-01-01T00:00:00Z"),
+    "description" : "",
+    "participants" : [
+      ""
+    ],
+    "title" : "thirdEvent",
+    "location" : ""
+  }
+
+  {
+    "_id" : ObjectId("55c80f39b78d4ee40dea772b"),
+    "from" : ISODate("1904-01-01T00:00:00Z"),
+    "to" : ISODate("1905-01-01T00:00:00Z"),
+    "description" : "",
+    "participants" : [ "" ],
+    "title" : "fourthEvent",
+    "location" : ""
+  }
+
+  {
+    "_id" : ObjectId("55c816e5c22000ad121f7006"),
+    "from" : ISODate("1901-01-01T00:00:00Z"),
+    "to" : ISODate("1902-01-01T00:00:00Z"),
+    "description" : "we time travelled here",
+    "participants" : [
+      "ben",
+      "jerry"
+    ],
+    "title" : "fifthEvent",
+    "location" : "the past"
+  }
+
+  {
+    "_id" : ObjectId("55c99d7daf11b2eada5cb9fe"),
+    "from" : ISODate("2015-08-11T00:00:00Z"),
+    "to" : ISODate("2015-08-13T00:00:00Z"),
+    "description" : "this is a test event happening in vlad's office",
+    "participants" : [
+      "vlad",
+      "neil"
+    ],
+    "title" : "Vlad test 2",
+    "location" : "vlad's office"
+  }
