@@ -10,16 +10,14 @@ var events = require('./routes/events');
 
 var app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+// Standard middleware for parsing request bodies, etc.
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+mongoose.connect('mongodb://assessment:assessmentEvents2014@ds037977.mongolab.com:37977/events');
 
 //  Simple middleware for all routes and requests.
 router.use(function(req, res, next){

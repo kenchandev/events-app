@@ -5,6 +5,6 @@ var router = express.Router();
 //  Import the model created with Mongoose ODM.
 var Event = require('../models/event');
 
-router.post('')
+router.route.put('')
 
 module.exports = router;
