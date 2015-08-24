@@ -26,10 +26,10 @@ router.use(function(req, res, next){
 });
 
 app.use('/', routes);
-app.use('/', events.create);
-app.use('/:id', events.read);
-app.use('/:id', events.update);
-app.use('/:id', events.delete);
+// app.use('/', events.create);
+// app.use('/:id', events.read);
+// app.use('/:id', events.update);
+// app.use('/:id', events.delete);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
