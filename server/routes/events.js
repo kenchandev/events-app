@@ -34,7 +34,7 @@ router.post('/', function(req, res){
  * Get a single event based on provided ID. (200)
  */
 router.get('/:event_id', function(req, res){
-  controller.show()
+  controller.show(req, res);
 });
 
 /**
@@ -42,7 +42,7 @@ router.get('/:event_id', function(req, res){
  * Update an event based on provided ID. (200)
  */
 router.put('/:event_id', function(req, res){
-
+  controller.update(req, res);
 });
 
 /**
@@ -50,20 +50,7 @@ router.put('/:event_id', function(req, res){
  * Remove an event based on provided ID. (204)
  */
 router.delete('/:event_id', function(req, res){
-  Event.findById(req.params.event_id, function(err, event){
-    if(err){
-      return serverErrorHandler(err, res);
-    }
-    if(!event){
-      return notFoundHandler(res);
-    }
-    event.remove(function(err){
-      if(err){
-        return serverErrorHandler(err, res);
-      }
-      return noContentHandler(res);
-    });
-  });
+  controller.delete(req, res);
 });
 
 /* Server has fulfilled the request, but does not need to return an entity-body. */
