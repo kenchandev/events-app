@@ -1,6 +1,6 @@
 'use strict';
 
-/* Avoid polluting the global scope. */
+/* Avoid polluting the global scope via IIFE. */
 (function(){
   var app = angular.module('app', [
       'ui-router'
@@ -18,7 +18,10 @@
         resolve: {
           events: ['EventsService', function(EventsService){
             return EventsService.listEvents();
-          }]
+          }],
+          event: function(){
+            return {};
+          }
         },
         templateUrl: './partials/suggestions.html',
         controller: '',
@@ -27,8 +30,12 @@
       .state('edit-form', {
         url: '/event-form/:event_id',
         resolve: {
+          events: function(){
+            return {};
+          },
           /* $stateParams holds query parameters. */
           event: ['$stateParams', 'EventsService', function($stateParams, EventsService){
+            /* For a filled form. */
             return EventsService.showEvent($stateParams.event_id);
           }]
         },
@@ -39,7 +46,13 @@
       .state('add-form', {
         url: '/event-form',
         resolve: {
-
+          events: function(){
+            return {};
+          },
+          event: function(){
+            /* For a blank form. */
+            return {};
+          }]
         },
         templateUrl: './partials/form.html',
         controller: '',
