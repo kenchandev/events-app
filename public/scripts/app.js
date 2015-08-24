@@ -3,6 +3,9 @@
 /* Avoid polluting the global scope via IIFE. */
 (function(){
   var app = angular.module('app', [
+    'ngMaterial',
+    'ngAnimate',
+    'ngAria',
     'ngMdIcons',
     'ui.router'
   ]);
@@ -21,7 +24,6 @@
         url: '/suggestions',
         resolve: {
           events: ['EventsService', function(EventsService){
-            console.log(EventsService.listEvents());
             return EventsService.listEvents().data;
           }],
           event: function(){

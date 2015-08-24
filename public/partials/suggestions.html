@@ -1,8 +1,41 @@
-<div style="top: 50%;">
-  <h1>Hello World!</h1>
+<!-- Button -->
+
+<!-- Search Bar -->
+
+<!-- List of Events -->
+<div id="suggestions">
+  <div class="collapse-card">
+    <div class="collapse-card__heading">
+      <div class="collapse-card__title">
+        <ng-md-icon icon="event_available"></ng-md-icon>
+        Hello World! <!-- Title Text -->
+      </div>
+    </div>
+    <div class="collapse-card__body">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <!-- Body Text -->
+    </div>
+  </div>
+
+  <div class="collapse-card">
+    <div class="collapse-card__heading">
+      <div class="collapse-card__title">
+        <ng-md-icon icon="event_available"></ng-md-icon>
+        Hello World! <!-- Title Text -->
+      </div>
+    </div>
+    <div class="collapse-card__body">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <!-- Body Text -->
+    </div>
+  </div>
 </div>
 
-<md-button class="md-raised">Button</md-button>
+<!-- Inline JavaScript -->
+<script type="text/javascript">
+  /* Initialize the paper collapsing featuring. */
+  $(function(){
+    $('.collapse-card').paperCollapse();
+  }());
+</script>
 
 <!-- <md-list>
   <md-item ng-repeat="item in activity | filter:search">
