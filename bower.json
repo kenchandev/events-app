@@ -15,6 +15,9 @@
     "tests"
   ],
   "dependencies": {
-    "materialize": "~0.97.0"
+    "angular": "angularjs#~1.4.4",
+    "angular-material": "~0.10.1",
+    "angular-ui-router": "~0.2.15",
+    "md-date-time": "~0.0.14"
   }
 }

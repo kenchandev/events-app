@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Event Application</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Import Custom Google Font: Oxygen -->
+  <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oxygen"/>
+
+  <!-- Import Bower-Installed Stylesheets -->
+  <link type="text/css" rel="stylesheet" href="./bower_components/md-date-time/dist/md-date-time.css"/>
+  <link rel="stylesheet" type="text/css" href="./bower_components/angular-material/angular-material.css">
+  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" media="screen">
+
+  <!-- Custom Styles -->
+  <link type="text/css" rel="stylesheet" href="./stylesheets/style.css"/>
+</head>
+<body layout="column" ng-app="app">
+
+  <div ng-controller="testCtrl">
+    <p ng-cloak>Full Mode: {{date | date:'yyyy/MM/dd HH:mm a'}}</p>
+    <time-date-picker ng-model="date" data-display-mode="full" class="modal-content"></time-date-picker>
+  </div>
+
+  <script type="text/javascript" src="./bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="./bower_components/angular-aria/angular-aria.js"></script>
+  <script type="text/javascript" src="./bower_components/angular-animate/angular-animate.js"></script>
+  <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+  <script type="text/javascript" src="./bower_components/md-date-time/dist/md-date-time.js"></script>
+  <script type="text/javascript">
+
+    angular.module('app', ['ngMaterial','mdDateTime']).controller('testCtrl', function($scope) {
+    	return $scope.date = new Date();
+    });
+
+  </script>
+</body>
+</html>

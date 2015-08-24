@@ -1,4 +1,4 @@
-//  Import gulp packages.
+/* Import gulp packages. */
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
     jshint = require('gulp-jshint'),
@@ -12,11 +12,23 @@ var gulp = require('gulp'),
       'javascript': 'public/scripts/min'
     };
 
-//  Create a default task and log a simple message.
-gulp.task('default', function(){
-  return gutil.log('Gulp is running!');
+/* Run JavaScript code through jshint. */
+gulp.task('jshint', function() {
+  return gulp.src(input.javascript)
+             .pipe(jshint())
+             .pipe(jshint.reporter('jshint-stylish'));
 });
 
+/*  Run 'watch' task when gulp is called. */
+gulp.task('default', ['watch']);
+
+/* Minify JavaScript files. */
+gulp.task('build-js', function(){
+  reutrn gulp.src(input.javascript)
+             .pipe()
+});
+
+/* Watch files for any changes. Run this task on updates. */
 gulp.task('watch', function(){
-  gulp.watch()
+  gulp.watch(input.javascript, [jshint, 'build-js']);
 });

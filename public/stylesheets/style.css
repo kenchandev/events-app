@@ -6,3 +6,34 @@ body {
 a {
   color: #00B7FF;
 }
+
+/* Custom Styles for Date/Timer Picker */
+
+.time-date > .control > .slider > .date-control {
+  /* hide overflow-x on Firefox */
+  overflow: hidden;
+}
+
+/* back/forward arrows */
+.title .md-button {
+  min-width: 0;
+}
+
+.time-date > .control > .slider > .date-control > .headers {
+  margin-top: 0;
+}
+
+/* date cells */
+.time-date > .control > .slider > .date-control .day-cell {
+  min-height: 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* switch control buttons */
+.time-date > .control > .slider > .switch-control {
+  margin: 0;
+  min-width: 0;
+  font-size: 18px;
+}

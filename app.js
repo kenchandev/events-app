@@ -4,13 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
-var index = require('./routes/index');
-var events = require('./routes/events');
+var events = require('./server/routes/events');
 
 var app = express();
 
-// Standard middleware for parsing request bodies, etc.
+/* Standard middleware for parsing request bodies, etc. */
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -19,23 +19,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 mongoose.connect('mongodb://assessment:assessmentEvents2014@ds037977.mongolab.com:37977/events');
 
-//  Simple middleware for all routes and requests.
-router.use(function(req, res, next){
-  console.log('An action has been executed by the server.');
-  next();
-});
+app.use('/api/1.0/events', events);
 
-app.use('/', routes);
-// app.use('/', events.create);
-// app.use('/:id', events.read);
-// app.use('/:id', events.update);
-// app.use('/:id', events.delete);
-
-// catch 404 and forward to error handler
+/* Catch 404 and forward to error handler. */
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
 module.exports = app;
