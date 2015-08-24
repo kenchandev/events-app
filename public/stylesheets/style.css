@@ -1,11 +1,9 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0px;
+  font: 16px "Oxygen", "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
-}
+
 
 /* Custom Styles for Date/Timer Picker */
 

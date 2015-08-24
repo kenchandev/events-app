@@ -15,31 +15,41 @@
 
   <!-- Custom Styles -->
   <link type="text/css" rel="stylesheet" href="./stylesheets/style.css"/>
-</head>
-<body layout="column" ng-app="app">
-
-
-
-  <div ng-controller="testCtrl">
-    <p ng-cloak>Full Mode: {{date | date:'yyyy/MM/dd HH:mm a'}}</p>
-    <time-date-picker ng-model="date" data-display-mode="full" class="modal-content"></time-date-picker>
-  </div>
 
   <!-- Import Bower-Installed Scripts -->
   <script type="text/javascript" src="./bower_components/angular/angular.js"></script>
   <script type="text/javascript" src="./bower_components/angular-aria/angular-aria.js"></script>
   <script type="text/javascript" src="./bower_components/angular-animate/angular-animate.js"></script>
   <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+  <script type="text/javascript" src="./bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script type="text/javascript" src="./bower_components/md-date-time/dist/md-date-time.js"></script>
+
+</head>
+<body layout="column" ng-app="app">
+
 
   <!-- Custom Scripts -->
   <script type="text/javascript" src="./scripts/app.js"></script>
-  <script type="text/javascript">
+  <script type="text/javascript" src="./scripts/suggestions.ctrl.js"></script>
+  <script type="text/javascript" src="./scripts/form.ctrl.js"></script>
+  <script type="text/javascript" src="./scripts/navbar.dir.js"></script>
+  <!-- <script type="text/javascript">
 
     angular.module('app', ['ngMaterial','mdDateTime']).controller('testCtrl', function($scope) {
     	return $scope.date = new Date();
     });
 
-  </script>
+  </script> -->
+
+  <sample-text></sample-text>
+  <div>
+    <div ui-view></div>
+  </div>
+
+  <!-- <div ng-controller="testCtrl">
+    <p ng-cloak>Full Mode: {{date | date:'yyyy/MM/dd HH:mm a'}}</p>
+    <time-date-picker ng-model="date" data-display-mode="full" class="modal-content"></time-date-picker>
+  </div> -->
+
 </body>
 </html>

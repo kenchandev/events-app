@@ -1,0 +1,18 @@
+<md-list>
+  <md-item ng-repeat="item in activity | filter:search">
+    <md-item-content>
+      <div class="md-tile-left inset" hide-sm>
+          <user-avatar></user-avatar>
+      </div>
+      <div class="md-tile-content">
+        <h3>Hello World!</h3>
+        <!-- <h4>{{item.who}}</h4>
+        <p>
+          {{item.notes}}
+        </p> -->
+      </div>
+    </md-item-content>
+    <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+    <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+  </md-item>
+</md-list>

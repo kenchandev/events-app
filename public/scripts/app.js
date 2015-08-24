@@ -3,7 +3,7 @@
 /* Avoid polluting the global scope via IIFE. */
 (function(){
   var app = angular.module('app', [
-      'ui-router'
+      'ui.router'
   ]);
 
   /* Change application views based on application state. */
@@ -24,8 +24,8 @@
           }
         },
         templateUrl: './partials/suggestions.html',
-        controller: '',
-        controllerAs: ''
+        controller: 'SuggestionsController',
+        controllerAs: 'suggestions'
       })
       .state('edit-form', {
         url: '/event-form/:event_id',
@@ -40,8 +40,8 @@
           }]
         },
         templateUrl: './partials/form.html',
-        controller: '',
-        controllerAs: ''
+        controller: 'FormController',
+        controllerAs: 'form'
       })
       .state('add-form', {
         url: '/event-form',
@@ -52,11 +52,11 @@
           event: function(){
             /* For a blank form. */
             return {};
-          }]
+          }
         },
         templateUrl: './partials/form.html',
-        controller: '',
-        controllerAs: ''
+        controller: 'FormController',
+        controllerAs: 'form'
       });
   });
 

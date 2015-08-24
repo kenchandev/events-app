@@ -4,9 +4,9 @@
 (function(){
   /* Define a controller for handling the listing of suggested events based on search. */
   angular.module('app')
-         .controller('suggestionController', ['$state, EventsService, events, event', SuggestionController]);
+         .controller('suggestionsController', ['$state, EventsService, events, event', SuggestionsController]);
 
-  function SuggestionController($state, EventsService, events, event){
+  function SuggestionsController($state, EventsService, events, event){
     console.log(event);
     console.log(events);
 
