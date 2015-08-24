@@ -1,61 +1,46 @@
-<form ng-submit="form.submitInfo()" layout="column">
-  <md-content md-theme="docs-dark" layout-padding layout="row" layout-sm="column">
-    <md-input-container>
-      <label>Title</label>
-      <input ng-model="user.title">
-    </md-input-container>
-    <md-input-container>
-      <label>Email</label>
-      <input ng-model="user.email" type="email">
-    </md-input-container>
-  </md-content>
-  <md-content layout-padding>
-    <form name="userForm">
-      <div layout layout-sm="column">
-        <md-input-container style="width:80%">
-            <label>Company (Disabled)</label>
-            <input ng-model="user.company" disabled>
-          </md-input-container>
-        <md-input-container flex>
-          <label>Submission Date</label>
-          <input type="date" ng-model="user.submissionDate">
-        </md-input-container>
-      </div>
-      <div layout layout-sm="column">
-        <md-input-container flex>
-          <label>First name</label>
-          <input ng-model="user.firstName">
-        </md-input-container>
-        <md-input-container flex>
-          <label>Last Name</label>
-          <input ng-model="theMax">
-        </md-input-container>
-      </div>
-      <md-input-container flex>
-        <label>Address</label>
-        <input ng-model="user.address">
-      </md-input-container>
-      <md-input-container md-no-float>
-        <input ng-model="user.address2" placeholder="Address 2">
-      </md-input-container>
-      <div layout layout-sm="column">
-        <md-input-container flex>
-          <label>City</label>
-          <input ng-model="user.city">
-        </md-input-container>
-        <md-input-container flex>
-          <label>State</label>
-          <input ng-model="user.state">
-        </md-input-container>
-        <md-input-container flex>
-          <label>Postal Code</label>
-          <input ng-model="user.postalCode">
-        </md-input-container>
-      </div>
-      <md-input-container flex>
-        <label>Biography</label>
-        <textarea ng-model="user.biography" columns="1" md-maxlength="150"></textarea>
-      </md-input-container>
-    </form>
-  </md-content>
-</form>
+
+<md-content flex md-scroll-y>
+  <ui-view layout="column" layout-fill layout-padding>
+      <ng-switch on="data.selectedIndex" class="tabpanel-container">
+        <div role="tabpanel"
+             id="tab1-content"
+             aria-labelledby="tab1"
+             ng-switch-when="0"
+             md-swipe-left="next()"
+             md-swipe-right="previous()"
+             layout="row" layout-align="center center">
+            <md-card flex-gt-sm="90" flex-gt-md="80">
+              <md-card-content>
+                <h2>Activity</h2>
+                <md-list>
+                  <md-item ng-repeat="item in activity | filter:search">
+                    <md-item-content>
+                      <div class="md-tile-left inset" hide-sm>
+                          <user-avatar></user-avatar>
+                      </div>
+                      <div class="md-tile-content">
+                        <h3>{{item.what}}</h3>
+                        <h4>{{item.who}}</h4>
+                        <p>
+                          {{item.notes}}
+                        </p>
+                      </div>
+                    </md-item-content>
+                    <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+                    <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+                  </md-item>
+                  <md-divider></md-divider>
+                  <md-item layout class="inset">
+                      <md-button layout layout-align="start center" flex class="md-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> More
+                      </md-button>
+                  </md-item>
+                </md-list>
+              </md-card-content>
+            </md-card>
+        </div>
+
+    </ng-switch>
+
+  </ui-view>
+</md-content>

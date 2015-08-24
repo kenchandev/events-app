@@ -5,7 +5,7 @@
 (function(){
   /* Define a controller for handling the listing of suggested events based on search. */
   angular.module('app')
-         .directive('sampleText', NavigationBar);
+         .directive('navBarHeader', NavigationBar);
 
   console.log('Inside Directive');
 

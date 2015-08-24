@@ -3,13 +3,17 @@
 /* Avoid polluting the global scope via IIFE. */
 (function(){
   var app = angular.module('app', [
-      'ui.router'
+    'ngMdIcons',
+    'ui.router'
   ]);
 
   /* Change application views based on application state. */
-  app.config(function($stateProvider, $urlRouterProvider){
+  app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
     /* Default home page is the listing of suggestions at '/'. */
-    $urlRouterProvider.otherwise('/suggestions');
+    $urlRouterProvider.otherwise(function($injector, $location) {
+      var $state = $injector.get("$state");
+      $state.go("suggestions");
+    });
 
     /* Resolve provides controllers with content/data that is custom to the state. */
     $stateProvider
@@ -17,13 +21,15 @@
         url: '/suggestions',
         resolve: {
           events: ['EventsService', function(EventsService){
-            return EventsService.listEvents();
+            console.log(EventsService.listEvents());
+            return EventsService.listEvents().data;
           }],
           event: function(){
+            /* For a blank form. */
             return {};
           }
         },
-        templateUrl: './partials/suggestions.html',
+        templateUrl: 'partials/suggestions.html',
         controller: 'SuggestionsController',
         controllerAs: 'suggestions'
       })
@@ -39,7 +45,7 @@
             return EventsService.showEvent($stateParams.event_id);
           }]
         },
-        templateUrl: './partials/form.html',
+        templateUrl: 'partials/form.html',
         controller: 'FormController',
         controllerAs: 'form'
       })
@@ -54,14 +60,14 @@
             return {};
           }
         },
-        templateUrl: './partials/form.html',
+        templateUrl: 'partials/form.html',
         controller: 'FormController',
         controllerAs: 'form'
       });
-  });
+  }]);
 
   /* Utilize $http service to communicate with RESTful API via the browser's XMLHttpRequest object or JSONP. */
-  app.service('EventsService', ['http', function($http){
+  app.service('EventsService', ['$http', function($http){
     /* GET request to retrieve all events. */
     this.listEvents = function(){
       return $http.get('/api/1.0/events');

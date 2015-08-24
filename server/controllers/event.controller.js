@@ -14,7 +14,7 @@ module.exports = {
       if(err){
         return res.send(500, err);
       }
-      return res.json(events);
+      return res.json(200, events);
     });
   },
 
@@ -38,7 +38,7 @@ module.exports = {
       if(!event){
         return res.send(404);
       }
-      return res.json(event);
+      return res.json(200, event);
     });
   },
 

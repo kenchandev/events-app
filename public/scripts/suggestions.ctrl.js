@@ -4,11 +4,15 @@
 (function(){
   /* Define a controller for handling the listing of suggested events based on search. */
   angular.module('app')
-         .controller('suggestionsController', ['$state, EventsService, events, event', SuggestionsController]);
+         .controller('SuggestionsController', ['$state', 'EventsService', 'events', 'event', SuggestionsController]);
+
+  console.log('Hello!');
 
   function SuggestionsController($state, EventsService, events, event){
-    console.log(event);
-    console.log(events);
+    console.log('Event', event);
+    console.log('Events', events);
+
+    console.log('What"s up!');
 
     this.deleteEvent = function(event_id){
       EventsService.deleteEvent(event_id);
