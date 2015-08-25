@@ -1,41 +1,30 @@
+<div id="search-add-row">
+
+</div>
+
 <!-- Button -->
 
 <!-- Search Bar -->
 
+
 <!-- List of Events -->
 <div id="suggestions">
-  <div class="collapse-card">
-    <div class="collapse-card__heading">
-      <div class="collapse-card__title">
-        <ng-md-icon icon="event_available"></ng-md-icon>
-        Hello World! <!-- Title Text -->
+  <div ng-repeat="event in suggestionsCtrl.events" on-finish-render="ngRepeatFinished">
+    <div class="collapse-card">
+      <div class="collapse-card__heading">
+        <div class="collapse-card__title">
+          <ng-md-icon icon="event_available"></ng-md-icon>
+          <span class="event-title">{{event.title}}</span> <!-- Title Text -->
+        </div>
       </div>
-    </div>
-    <div class="collapse-card__body">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <!-- Body Text -->
-    </div>
-  </div>
-
-  <div class="collapse-card">
-    <div class="collapse-card__heading">
-      <div class="collapse-card__title">
-        <ng-md-icon icon="event_available"></ng-md-icon>
-        Hello World! <!-- Title Text -->
+      <div class="collapse-card__body">
+        {{event.description}}
       </div>
-    </div>
-    <div class="collapse-card__body">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <!-- Body Text -->
     </div>
   </div>
 </div>
 
-<!-- Inline JavaScript -->
-<script type="text/javascript">
-  /* Initialize the paper collapsing featuring. */
-  $(function(){
-    $('.collapse-card').paperCollapse();
-  }());
-</script>
+
 
 <!-- <md-list>
   <md-item ng-repeat="item in activity | filter:search">

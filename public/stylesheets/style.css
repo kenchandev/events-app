@@ -24,10 +24,18 @@ body {
   font-size: 28px;
 }
 
-#suggestions {
-  padding-left: 5%;
-  padding-right: 5%;
+#suggestions, #search-add-row {
+  padding-left: 10%;
+  padding-right: 10%;
   margin-top: 10px;
+}
+
+.collapse-card {
+  border-bottom: 1px solid #ccc;
+}
+
+.event-title {
+  font-weight: bold;
 }
 
 /* Custom Styles for Date/Timer Picker */

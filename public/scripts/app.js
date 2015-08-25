@@ -24,7 +24,8 @@
         url: '/suggestions',
         resolve: {
           events: ['EventsService', function(EventsService){
-            return EventsService.listEvents().data;
+            /* This returns a promise, which will be processed inside the corresponding controller. */
+            return EventsService.listEvents();
           }],
           event: function(){
             /* For a blank form. */
@@ -33,7 +34,7 @@
         },
         templateUrl: 'partials/suggestions.html',
         controller: 'SuggestionsController',
-        controllerAs: 'suggestions'
+        controllerAs: 'suggestionsCtrl'
       })
       .state('edit-form', {
         url: '/event-form/:event_id',
@@ -49,7 +50,7 @@
         },
         templateUrl: 'partials/form.html',
         controller: 'FormController',
-        controllerAs: 'form'
+        controllerAs: 'formCtrl'
       })
       .state('add-form', {
         url: '/event-form',
@@ -64,7 +65,7 @@
         },
         templateUrl: 'partials/form.html',
         controller: 'FormController',
-        controllerAs: 'form'
+        controllerAs: 'formCtrl'
       });
   }]);
 

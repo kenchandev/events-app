@@ -4,18 +4,34 @@
 (function(){
   /* Define a controller for handling the listing of suggested events based on search. */
   angular.module('app')
-         .controller('SuggestionsController', ['$state', 'EventsService', 'events', 'event', SuggestionsController]);
+         .controller('SuggestionsController', ['$scope', '$state', 'EventsService', 'events', 'event', SuggestionsController])
+         .directive('onFinishRender', ['$timeout', renderComplete]);
 
-  console.log('Hello!');
-
-  function SuggestionsController($state, EventsService, events, event){
-    console.log('Event', event);
-    console.log('Events', events);
-
-    console.log('What"s up!');
+  function SuggestionsController($scope, $state, EventsService, events, event){
+    if(events.status === 200){
+      this.events = events.data; /* Need this for rendering the list of suggested events. */
+    }
 
     this.deleteEvent = function(event_id){
       EventsService.deleteEvent(event_id);
+    };
+
+    $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+      /* Initialize the paper collapsing featuring. */
+      $('.collapse-card').paperCollapse();
+    });
+  };
+
+  function renderComplete($timeout){
+    return {
+      restrict: 'A',
+      link: function(scope, element, attr){
+        if(scope.$last === true){
+          $timeout(function(){
+            scope.$emit('ngRepeatFinished');
+          })
+        }
+      }
     };
   };
 }());

@@ -4,6 +4,8 @@ Events can be easily managed through this intuitive and interactive application!
 
 ##  Usage
 
+`bower install`
+`npm install`
 `npm start`
 
 ##  Notes
