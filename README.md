@@ -4,23 +4,25 @@ Events can be easily managed through this intuitive and interactive application!
 
 ##  Usage
 
-`bower install`
-`npm install`
-`npm start`
+1. `bower install`
+2. `npm install`
+3. `npm start`
 
 ##  Notes
 
-The following is a beautiful guide describing how to keep AngularJS controllers maintainable and small via UI-Router:
+1. The following is a beautiful guide describing how to keep AngularJS controllers maintainable and small via UI-Router:
 
-https://scotch.io/tutorials/making-skinny-angularjs-controllers
+   https://scotch.io/tutorials/making-skinny-angularjs-controllers
 
-For Material Design icons, refer to the following URL:
+2. For Material Design icons, refer to the following URL:
 
-https://klarsys.github.io/angular-material-icons/
+   https://klarsys.github.io/angular-material-icons/
 
-Another small issue encountered:
+3. Another small issue encountered:
 
-http://stackoverflow.com/questions/25065699/why-does-angularjs-with-ui-router-keep-firing-the-statechangestart-event
+   http://stackoverflow.com/questions/25065699/why-does-angularjs-with-ui-router-keep-firing-the-statechangestart-event
+
+4. Date and time picker (datetime-local) feature works in Chrome, Safari and Opera only...
 
 ##  License
 

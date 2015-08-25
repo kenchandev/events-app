@@ -12,18 +12,19 @@
    *  - Adding a new event.
    */
   function FormController($scope, $state, EventsService, events, event){
-    /* If event.data exists, then the user is editing an existing event. */
-    // event.data
-    $scope.startTime = new Date();
-    $scope.endTime = new Date();
-    /*  */
+    /* Participants is not in a String format for inserting into form when editing. Hence, convert the array of names to String. */
+    if(event.data){
+      event.data.participants = event.data.participants.join(", ");
+    }
+
+    /*
+     * If event.data exists, then the user is editing an existing event. Hence, set this.event to event.data.
+     * If the user is adding a new event, then event.data is undefined. Hence, set this.event to an empty object.
+     */
+    this.event = event.data || {};
 
     this.saveEventInfo = function(){
 
     };
-
-    this.renderTimePicker = function(){
-      console.log("Hello!");
-    }
   };
 }());

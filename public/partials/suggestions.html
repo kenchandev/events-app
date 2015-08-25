@@ -41,7 +41,7 @@
         </div>
         <span class="modification-buttons">
           <!-- Navigate to state 'edit' with params. Send the event's unique id. -->
-          <md-button ui-sref="edit({id: event._id})" class="md-raised md-primary"><ng-md-icon icon="mode_edit"></ng-md-icon>Edit Event</md-button>
+          <md-button ui-sref="edit({event_id: event._id})" class="md-raised md-primary"><ng-md-icon icon="mode_edit"></ng-md-icon>Edit Event</md-button>
           <!-- Delete an event by clicking this button. -->
           <md-button ui-sref="suggestions" class="md-raised md-warn" ng-click="suggestionsCtrl.deleteEvent($index, event._id)"><ng-md-icon icon="delete"></ng-md-icon>Delete Event</md-button>
         </span>
