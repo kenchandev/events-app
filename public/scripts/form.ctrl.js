@@ -6,6 +6,11 @@
   angular.module('app')
          .controller('FormController', ['$state', 'EventsService', 'events', 'event', FormController]);
 
+  /*
+   * Two Cases:
+   *  - Editing an existing event.
+   *  - Adding a new event.
+   */
   function FormController($state, EventsService, events, event){
     
   };

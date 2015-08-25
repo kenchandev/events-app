@@ -12,8 +12,7 @@
       this.events = events.data; /* Need this for rendering the list of suggested events. */
     }
 
-    console.log(this.events);
-
+    /* Execute this when the delete button is clicked. */
     this.deleteEvent = function(event_id){
       EventsService.deleteEvent(event_id);
     };

@@ -36,7 +36,7 @@
         controller: 'SuggestionsController',
         controllerAs: 'suggestionsCtrl'
       })
-      .state('edit-form', {
+      .state('edit', {
         url: '/event-form/:event_id',
         resolve: {
           events: function(){
@@ -52,7 +52,7 @@
         controller: 'FormController',
         controllerAs: 'formCtrl'
       })
-      .state('add-form', {
+      .state('add', {
         url: '/event-form',
         resolve: {
           events: function(){
