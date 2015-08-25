@@ -83,7 +83,9 @@ body {
 }
 
 .from-date-time, .to-date-time {
-  display: inline-block;
+  display: block;
+  clear: both;
+  float: right;
 }
 
 .collapse-card__body {
