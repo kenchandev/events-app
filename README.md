@@ -10,6 +10,11 @@ Events can be easily managed through this intuitive and interactive application!
 
 Inside of your favorite browser (preferable Chrome, Safari or Opera for reasons mentioned in the "Notes" section), navigate to `localhost:3000`.
 
+##  Other Items to Finish
+
+1. Implement tests using Protractor and Karma.
+2. Fix gulpfile.js file.
+
 ##  Notes
 
 1. The following is a beautiful guide describing how to keep AngularJS controllers maintainable and small via UI-Router:
