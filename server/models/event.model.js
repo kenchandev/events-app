@@ -10,7 +10,7 @@ var EventSchema = new Schema({
   location: { type: String },
   description: { type: String },
   participants: [{ type: String }],
-  createdOn: [{ type: Date, default: Date.now }]
+  createdOn: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('Event', EventSchema); 
+module.exports = mongoose.model('Event', EventSchema);

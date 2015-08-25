@@ -1,7 +1,8 @@
 <div id="search-add-row" layout layout-sm="column">
   <md-input-container id="search-element-flex" flex>
     <label><ng-md-icon icon="search"></ng-md-icon> Search EventTracker</label>
-    <input type="text">
+    <!-- Excellent reference for figuring out filtering with input search: http://fdietz.github.io/recipes-with-angular-js/common-user-interface-patterns/filtering-and-sorting-a-list.html -->
+    <input type="text" ng-model="query.title">
   </md-input-container>
   <md-input-container id="button-element-flex" flex>
     <md-button id="add-event-button" class="md-raised"><ng-md-icon icon="add_circle"></ng-md-icon> Add Event</md-button>
@@ -10,7 +11,8 @@
 
 <!-- List of Events -->
 <div id="suggestions">
-  <div ng-repeat="event in suggestionsCtrl.events | limitTo:10" on-finish-render="ngRepeatFinished">
+  <!-- Order By createdAt date: http://stackoverflow.com/questions/16261348/descending-order-by-date-filter-in-angularjs -->
+  <div ng-repeat="event in suggestionsCtrl.events | filter:query | limitTo:10 | orderBy:'created_at':true" on-finish-render="ngRepeatFinished">
     <div class="collapse-card">
       <div class="collapse-card__heading">
         <div class="collapse-card__title">
