@@ -7,6 +7,7 @@
     'ngAnimate',
     'ngAria',
     'ngMdIcons',
+    'mdDateTime',
     'ui.router'
   ]);
 

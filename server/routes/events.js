@@ -24,6 +24,7 @@ router.get('/', function(req, res){
 /**
  * POST
  * Add an event to the MongoDB database. (201)
+ * Request has been fulfilled and a new resource has been created.
  */
 router.post('/', function(req, res){
   controller.create(req, res);
@@ -48,25 +49,10 @@ router.put('/:event_id', function(req, res){
 /**
  * DELETE
  * Remove an event based on provided ID. (204)
+ * Server has fulfilled the request, but does not need to return an entity-body.
  */
 router.delete('/:event_id', function(req, res){
   controller.delete(req, res);
 });
-
-/* Server has fulfilled the request, but does not need to return an entity-body. */
-function noContentHandler(res){
-  return res.send(204);
-};
-
-/* Handle not found errors encountered while accessing API. */
-/* Ex: User fails to provide a valid ID value. */
-function notFoundHandler(res){
-  return res.send(404);
-};
-
-/* Handle server errors encountered while accessing API. */
-function serverErrorHandler(err, res){
-  return res.send(500, err);
-};
 
 module.exports = router;

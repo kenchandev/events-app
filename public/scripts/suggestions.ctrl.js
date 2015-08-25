@@ -13,7 +13,8 @@
     }
 
     /* Execute this when the delete button is clicked. */
-    this.deleteEvent = function(event_id){
+    this.deleteEvent = function(index, event_id){
+      this.events.splice(index, 1); /* Two-way data binding helps to remove the UI element. */
       EventsService.deleteEvent(event_id);
     };
 

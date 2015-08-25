@@ -23,7 +23,14 @@ module.exports = {
    *
    */
   create: function(req, res){
-    console.log(req.body);
+    var data = req.body;
+
+    Event.create(data, function(err, event){
+      if(err){
+        return res.send(500, err);
+      }
+      return res.json(201, event);
+    });
   },
 
   /**

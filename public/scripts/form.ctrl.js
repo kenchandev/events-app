@@ -2,7 +2,7 @@
 
 /* Avoid polluting the global scope via IIFE. */
 (function(){
-  /* Define a controller for handling the listing of suggested events based on search. */
+  /* Define a controller for handling the web form. */
   angular.module('app')
          .controller('FormController', ['$state', 'EventsService', 'events', 'event', FormController]);
 
@@ -12,6 +12,13 @@
    *  - Adding a new event.
    */
   function FormController($state, EventsService, events, event){
-    
+    /* If event.data exists, then the user is editing an existing event. */
+    // event.data
+
+    /*  */
+
+    this.saveEventInfo = function(){
+
+    };
   };
 }());

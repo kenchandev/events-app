@@ -1,85 +1,26 @@
-<div layout="column">
-  <br/>
+<!-- This web form is loosely based on the ng-validate example on W3 Schools. -->
+<form layout="column" name="eventForm" ng-submit="formCtrl.saveEventInfo()">
   <md-content layout-padding class="autoScroll">
-    <md-input-container class="md-icon-float" >
-      <!-- Use floating label instead of placeholder -->
-      <label>Name</label>
-      <ng-md-icon icon="person"></ng-md-icon>
-      <input ng-model="user.name" type="text">
+    <md-input-container md-no-float>
+      <ng-md-icon icon="event_available"></ng-md-icon>
+      <input ng-model="formCtrl.event.title" type="text" name="title" placeholder="Title (required)" ng-required="true">
     </md-input-container>
     <md-input-container md-no-float>
-      <ng-md-icon icon="phone"></ng-md-icon>
-      <input ng-model="user.phone" type="text" placeholder="Phone Number">
+      <ng-md-icon icon="description"></ng-md-icon>
+      <input ng-model="formCtrl.event.description" type="text" name="description" placeholder="Description (required)" ng-required="true">
     </md-input-container>
-    <md-input-container >
+    <md-input-container md-no-float>
       <!-- Use floating placeholder instead of label -->
-      <ng-md-icon icon=email></ng-md-icon>
-      <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+      <ng-md-icon icon="location_on"></ng-md-icon>
+      <input ng-model="formCtrl.event.location" type="text" name="location" placeholder="Location (required)" ng-required="true">
     </md-input-container>
     <md-input-container md-no-float>
-      <ng-md-icon icon="location_on"></ng-md-icon>
-      <input ng-model="user.address" type="text" placeholder="Address" >
+      <ng-md-icon icon="people"></ng-md-icon>
+      <input ng-model="formCtrl.event.participants" type="text" name="participants" placeholder="Participants (required, separate by comma)" ng-required="true">
     </md-input-container>
   </md-content>
-</div>
-
-
-
-
-      <!-- <md-toolbar class="md-hue-1" ng-show="showSearch">
-        <div class="md-toolbar-tools">
-          <md-button ng-click="showSearch = !showSearch" aria-label="Back">
-            <ng-md-icon icon="arrow_back"></ng-md-icon>
-          </md-button>
-          <h3 flex="10">
-            Back
-          </h3>
-          <md-input-container md-theme="input" flex>
-            <label>&nbsp;</label>
-            <input ng-model="search.who" placeholder="enter search">
-          </md-input-container>
-          <md-button aria-label="Search" ng-click="showSearch = !showSearch">
-            <ng-md-icon icon="search"></ng-md-icon>
-          </md-button>
-          <md-button aria-label="Open Settings" ng-click="showListBottomSheet($event)">
-            <ng-md-icon icon="more_vert"></ng-md-icon>
-          </md-button>
-        </div>
-
-      </md-toolbar> -->
-      <div layout="column" class="relative" layout-fill role="main">
-      <md-content flex md-scroll-y>
-        <ui-view layout="column" layout-fill layout-padding>
-          <div class="inset" hide-sm></div>
-              <div role="tabpanel"
-                   id="tab1-content"
-                   aria-labelledby="tab1"
-                   ng-switch-when="0"
-                   layout="row" layout-align="center center">
-                  <md-card flex-gt-sm="90" flex-gt-md="80">
-                    <md-card-content>
-                      <h2>Activity</h2>
-                      <md-list>
-                        <md-item ng-repeat="item in activity | filter:search">
-                          <md-item-content>
-                            <div class="md-tile-left inset" hide-sm>
-                                <user-avatar></user-avatar>
-                            </div>
-                            <div class="md-tile-content">
-                              <h3>{{item.what}}</h3>
-                              <h4>{{item.who}}</h4>
-                              <p>
-                                {{item.notes}}
-                              </p>
-                            </div>
-                          </md-item-content>
-                          <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
-                          <md-divider hide-gt-sm ng-if="!$last"></md-divider>
-                        </md-item>
-                      </md-list>
-                    </md-card-content>
-                  </md-card>
-              </div>
-        </ui-view>
-      </md-content>
-    </div>
+  <!-- ng-disabled is based on interactions with inputs with the corresponding name attributes. -->
+  <md-button class="md-raised" style="background-color:#42bd41;" type="submit" ng-disabled="eventForm.title.$dirty && eventForm.title.$invalid">Submit</md-button>
+  <!-- Navigate to state 'suggestions' with no params. -->
+  <md-button ui-sref="suggestions" class="md-raised md-warn">Cancel</md-button>
+</form>
