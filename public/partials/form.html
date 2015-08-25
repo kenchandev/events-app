@@ -3,19 +3,19 @@
   <md-content layout-padding class="autoScroll">
     <md-input-container md-no-float>
       <label><ng-md-icon icon="event_available"></ng-md-icon> Title (required)</label>
-      <input ng-model="formCtrl.event.title" type="text" name="title" ng-required="true">
+      <input ng-model="formCtrl.event.title" type="text" name="title" ng-minlength="2" ng-maxlength="40" ng-required="true">
     </md-input-container>
     <md-input-container md-no-float>
       <label><ng-md-icon icon="description"></ng-md-icon> Description (required)</label>
-      <input ng-model="formCtrl.event.description" type="text" name="description" ng-required="true">
+      <input ng-model="formCtrl.event.description" type="text" name="description" ng-minlength="2" ng-maxlength="300" ng-required="true">
     </md-input-container>
     <md-input-container md-no-float>
       <label><ng-md-icon icon="location_on"></ng-md-icon> Location (required)</label>
-      <input ng-model="formCtrl.event.location" type="text" name="location" ng-required="true">
+      <input ng-model="formCtrl.event.location" type="text" name="location" ng-minlength="2" ng-maxlength="40" ng-required="true">
     </md-input-container>
     <md-input-container md-no-float>
       <label><ng-md-icon icon="people"></ng-md-icon> Participants (required, separate by comma)</label>
-      <input ng-model="formCtrl.event.participants" type="text" name="participants" ng-required="true">
+      <input ng-model="formCtrl.event.participants" type="text" name="participants" ng-minlength="2" ng-maxlength="100" ng-required="true">
     </md-input-container>
     <!-- https://docs.angularjs.org/api/ng/input/input%5Bdatetime-local%5D -->
     <div layout layout-sm="column">
