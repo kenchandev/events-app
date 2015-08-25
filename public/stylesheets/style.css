@@ -135,6 +135,27 @@ body {
 
 /* Custom Styles for Date/Timer Picker */
 
+.time-date > .control > .full-title {
+  background-color: #FF5252;
+}
+
+.time-date button, .time-date .button {
+  color: #FF5252;
+}
+
+.time-date > .control > .slider > .date-control > .days .day-cell.selected {
+  background-color: #FF5252;
+}
+
+.time-date.full-mode > .buttons {
+  background-color: #FF5252;
+}
+
+.time-date > .control > .slider > .date-control > .days .day-cell:hover, .time-date > .control > .slider > .date-control > .days .day-cell:active {
+  color: #e6e6e6;
+  background-color: #FF5252;
+}
+
 .time-date > .control > .slider > .date-control {
   /* hide overflow-x on Firefox */
   overflow: hidden;
@@ -163,6 +184,13 @@ body {
   min-width: 0;
   font-size: 18px;
 }
+
+/*#start-time-date-picker {
+  position: absolute;
+  width: 50%;
+  height: 50%
+  z-index: 9999;
+}*/
 
 @media screen and (max-width: 599px) {
   #search-add-row #button-element-flex {
