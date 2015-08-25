@@ -18,9 +18,21 @@
       <ng-md-icon icon="people"></ng-md-icon>
       <input ng-model="formCtrl.event.participants" type="text" name="participants" placeholder="Participants (required, separate by comma)" ng-required="true">
     </md-input-container>
+    <div layout layout-sm="column">
+      <md-input-container flex>
+        <ng-md-icon icon="access_time"></ng-md-icon>
+        <input ng-model="formCtrl.event.from" type="text" name="from" placeholder="Start Date" ng-required="true" ng-click="formCtrl.renderTimePicker()">
+      </md-input-container>
+      <md-input-container flex>
+        <ng-md-icon icon="access_time"></ng-md-icon>
+        <input ng-model="formCtrl.event.to" type="text" name="to" placeholder="End Date" ng-required="true" ng-click="formCtrl.renderTimePicker()">
+      </md-input-container>
+    </div>
   </md-content>
-  <!-- ng-disabled is based on interactions with inputs with the corresponding name attributes. -->
-  <md-button class="md-raised" style="background-color:#42bd41;" type="submit" ng-disabled="eventForm.title.$dirty && eventForm.title.$invalid">Submit</md-button>
-  <!-- Navigate to state 'suggestions' with no params. -->
-  <md-button ui-sref="suggestions" class="md-raised md-warn">Cancel</md-button>
+  <div class="form-buttons">
+    <!-- Navigate to state 'suggestions' with no params. -->
+    <md-button ui-sref="suggestions" class="md-raised md-warn">Cancel</md-button>
+    <!-- ng-disabled is based on interactions with inputs with the corresponding name attributes. -->
+    <md-button ui-sref="suggestions" class="md-raised" style="background-color:#42bd41;" type="submit" ng-disabled="eventForm.title.$dirty && eventForm.title.$invalid">Submit</md-button>
+  </div>
 </form>

@@ -24,10 +24,26 @@ body {
   font-size: 28px;
 }
 
-#suggestions, #search-add-row {
+#suggestions, #search-add-row, form {
   padding-left: 10%;
   padding-right: 10%;
   margin-top: 10px;
+}
+
+/* http://www.sketchingwithcss.com/samplechapter/cheatsheet.html#left */
+#search-add-row #button-element-flex {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+#add-event-button {
+  background-color: #FF5252;
+  color: white;
+  width: 50%;
 }
 
 .collapse-card {
@@ -107,6 +123,16 @@ body {
   float: right;
 }
 
+.form-buttons {
+  clear: both;
+}
+
+.form-buttons a.md-raised {
+  width: 25%
+  display: inline-block;
+  float: right;
+}
+
 /* Custom Styles for Date/Timer Picker */
 
 .time-date > .control > .slider > .date-control {
@@ -136,4 +162,17 @@ body {
   margin: 0;
   min-width: 0;
   font-size: 18px;
+}
+
+@media screen and (max-width: 599px) {
+  #search-add-row #button-element-flex {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row /* works with row or column */
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
 }

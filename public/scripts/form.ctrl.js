@@ -20,5 +20,9 @@
     this.saveEventInfo = function(){
 
     };
+
+    this.renderTimePicker = function(){
+      console.log("Hello!");
+    }
   };
 }());
