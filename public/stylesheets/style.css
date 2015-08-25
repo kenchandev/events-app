@@ -124,6 +124,7 @@ body {
 }
 
 form {
+  display: block !important;
   clear: both;
 }
 

@@ -9,14 +9,15 @@
 
   function SuggestionsController($scope, $state, EventsService, events, event){
     if(events.status === 200){
-      this.events = events.data; /* Need this for rendering the list of suggested events. */
+      this.events = _(events.data).reverse().value(); /* Need this for rendering the list of suggested events. */
     }
+
+    console.log(this.events);
 
     /* Execute this when the delete button is clicked. */
     this.deleteEvent = function(index, event_id){
-      console.log(this.events);
-      console.log(index);
-      this.events.splice(index, 1); /* Two-way data binding helps to remove the UI element. */
+      this.events = _.without(this.events, _.findWhere(this.events, {_id: event_id}));
+      // this.events.splice(index, 1); /* Two-way data binding helps to remove the UI element. */
       console.log(this.events);
       EventsService.deleteEvent(event_id)
                    .success(function(){

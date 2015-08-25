@@ -12,7 +12,7 @@
 <!-- List of Events -->
 <div id="suggestions">
   <!-- Order By createdAt date: http://stackoverflow.com/questions/16261348/descending-order-by-date-filter-in-angularjs -->
-  <div ng-repeat="event in suggestionsCtrl.events | filter:query | limitTo:10 | orderBy:'created_at':true" on-finish-render="ngRepeatFinished">
+  <div ng-repeat="event in suggestionsCtrl.events | filter:query | limitTo:10 " on-finish-render="ngRepeatFinished">
     <div class="collapse-card">
       <div class="collapse-card__heading">
         <div class="collapse-card__title">
