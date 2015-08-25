@@ -127,7 +127,7 @@ body {
   clear: both;
 }
 
-.form-buttons a.md-raised {
+.form-buttons a {
   width: 25%
   display: inline-block;
   float: right;

@@ -1,5 +1,5 @@
 <!-- This web form is loosely based on the ng-validate example on W3 Schools. -->
-<form layout="column" name="eventForm" ng-submit="formCtrl.saveEventInfo()">
+<form layout="column" name="formCtrl.eventForm" ng-submit="formCtrl.saveEventInfo()">
   <md-content layout-padding class="autoScroll">
     <md-input-container md-no-float>
       <label><ng-md-icon icon="event_available"></ng-md-icon> Title (required)</label>
@@ -33,6 +33,6 @@
     <!-- Navigate to state 'suggestions' with no params. -->
     <md-button ui-sref="suggestions" class="md-raised md-warn">Cancel</md-button>
     <!-- ng-disabled is based on interactions with inputs with the corresponding name attributes. -->
-    <md-button ui-sref="suggestions" class="md-raised" style="background-color:#42bd41;" type="submit" ng-disabled="eventForm.title.$dirty && eventForm.title.$invalid">Submit</md-button>
+    <a><md-button class="md-raised" style="background-color:#42bd41;" type="submit" ng-disabled="formCtrl.eventForm.$pristine && formCtrl.eventForm.$invalid">Submit</md-button></a>
   </div>
 </form>
