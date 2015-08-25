@@ -123,12 +123,12 @@ body {
   float: right;
 }
 
-.form-buttons {
+form {
   clear: both;
 }
 
-.form-buttons a {
-  width: 25%
+form a, form button {
+  width: 25%;
   display: inline-block;
   float: right;
 }

@@ -14,8 +14,14 @@
 
     /* Execute this when the delete button is clicked. */
     this.deleteEvent = function(index, event_id){
+      console.log(this.events);
+      console.log(index);
       this.events.splice(index, 1); /* Two-way data binding helps to remove the UI element. */
-      EventsService.deleteEvent(event_id);
+      console.log(this.events);
+      EventsService.deleteEvent(event_id)
+                   .success(function(){
+                     $state.go('suggestions')
+                   });
     };
 
     /* Need to initialize the collapsible items functionality after ALL have been rendered. */

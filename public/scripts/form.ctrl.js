@@ -37,8 +37,26 @@
     console.log(this.event);
 
     this.saveEventInfo = function(){
-      //.toISOString()
+      //  Must reassemble participants into an array.
       console.log(this.event);
+
+      //  Must convert time back to ISO format.
+      if(this.event.to) this.event.to = this.event.to.toISOString();
+      if(this.event.from) this.event.from = this.event.from.toISOString();
+
+      /* If this event hasn't already been inserted into the MongoDB, do so. */
+      if(!this.event._id){
+        EventsService.createEvent(this.event)
+                      .success(function(){
+                        $state.go('suggestions')
+                      });
+      }
+      else{
+        EventsService.updateEvent(this.event._id, this.event)
+                      .success(function(){
+                        $state.go('suggestions')
+                      });
+      }
     };
   };
 }());

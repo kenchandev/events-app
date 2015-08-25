@@ -6,33 +6,31 @@
       <input ng-model="formCtrl.event.title" type="text" name="title" ng-minlength="2" ng-maxlength="40" ng-required="true">
     </md-input-container>
     <md-input-container md-no-float>
-      <label><ng-md-icon icon="description"></ng-md-icon> Description (required)</label>
-      <input ng-model="formCtrl.event.description" type="text" name="description" ng-minlength="2" ng-maxlength="300" ng-required="true">
+      <label><ng-md-icon icon="description"></ng-md-icon> Description</label>
+      <input ng-model="formCtrl.event.description" type="text" name="description" ng-minlength="2" ng-maxlength="300">
     </md-input-container>
     <md-input-container md-no-float>
-      <label><ng-md-icon icon="location_on"></ng-md-icon> Location (required)</label>
-      <input ng-model="formCtrl.event.location" type="text" name="location" ng-minlength="2" ng-maxlength="40" ng-required="true">
+      <label><ng-md-icon icon="location_on"></ng-md-icon> Location</label>
+      <input ng-model="formCtrl.event.location" type="text" name="location" ng-minlength="2" ng-maxlength="40">
     </md-input-container>
     <md-input-container md-no-float>
-      <label><ng-md-icon icon="people"></ng-md-icon> Participants (required, separate by comma)</label>
-      <input ng-model="formCtrl.event.participants" type="text" name="participants" ng-minlength="2" ng-maxlength="100" ng-required="true">
+      <label><ng-md-icon icon="people"></ng-md-icon> Participants (separate by comma)</label>
+      <input ng-model="formCtrl.event.participants" type="text" name="participants" ng-minlength="2" ng-maxlength="100">
     </md-input-container>
     <!-- https://docs.angularjs.org/api/ng/input/input%5Bdatetime-local%5D -->
     <div layout layout-sm="column">
       <md-input-container flex>
-        <label><ng-md-icon icon="access_time"></ng-md-icon> Start Date (required, yyyy-MM-ddTHH:mm:ss)</label>
-        <input ng-model="formCtrl.event.from" type="datetime-local" name="from" min="2000-01-01T00:00:00" max="2100-12-31T00:00:00" ng-required="true">
+        <label><ng-md-icon icon="access_time"></ng-md-icon> Start Date (yyyy-MM-ddTHH:mm:ss)</label>
+        <input ng-model="formCtrl.event.from" type="datetime-local" name="from" min="2000-01-01T00:00:00" max="2100-12-31T00:00:00">
       </md-input-container>
       <md-input-container flex>
-        <label><ng-md-icon icon="access_time"></ng-md-icon> End Date (required, yyyy-MM-ddTHH:mm:ss)</label>
-        <input ng-model="formCtrl.event.to" type="datetime-local" name="to" min="2000-01-01T00:00:00" max="2100-12-31T00:00:00" ng-required="true">
+        <label><ng-md-icon icon="access_time"></ng-md-icon> End Date (yyyy-MM-ddTHH:mm:ss)</label>
+        <input ng-model="formCtrl.event.to" type="datetime-local" name="to" min="2000-01-01T00:00:00" max="2100-12-31T00:00:00">
       </md-input-container>
     </div>
   </md-content>
-  <div class="form-buttons">
-    <!-- Navigate to state 'suggestions' with no params. -->
-    <md-button ui-sref="suggestions" class="md-raised md-warn">Cancel</md-button>
-    <!-- ng-disabled is based on interactions with inputs with the corresponding name attributes. -->
-    <a><md-button class="md-raised" style="background-color:#42bd41;" type="submit" ng-disabled="formCtrl.eventForm.$pristine && formCtrl.eventForm.$invalid">Submit</md-button></a>
-  </div>
+  <!-- Navigate to state 'suggestions' with no params. -->
+  <md-button ui-sref="suggestions" class="md-raised md-warn">Cancel</md-button>
+  <!-- ng-disabled is based on interactions with inputs with the corresponding name attributes. -->
+  <md-button class="md-raised" style="background-color:#42bd41;" type="submit" ng-disabled="formCtrl.eventForm.$pristine && formCtrl.eventForm.$invalid">Submit</md-button>
 </form>
