@@ -9,16 +9,37 @@
 
 <!-- List of Events -->
 <div id="suggestions">
-  <div ng-repeat="event in suggestionsCtrl.events" on-finish-render="ngRepeatFinished">
+  <div ng-repeat="event in suggestionsCtrl.events | limitTo:10" on-finish-render="ngRepeatFinished">
     <div class="collapse-card">
       <div class="collapse-card__heading">
         <div class="collapse-card__title">
           <ng-md-icon icon="event_available"></ng-md-icon>
           <span class="event-title">{{event.title}}</span> <!-- Title Text -->
+          <span class="event-time">
+            <ng-md-icon icon="access_time"></ng-md-icon>
+            <span class="from-date">{{event.from | date:'mediumDate'}}</span>
+            <span class="from-time">{{event.from | date:'shortTime'}}</span>
+            -
+            <span class="to-date">{{event.to | date:'mediumDate'}}</span>
+            <span class="to-time">{{event.to | date:'shortTime'}}</span>
         </div>
       </div>
       <div class="collapse-card__body">
-        {{event.description}}
+        <div class="event-information">
+          <span class="event-location">
+            <span class="event-info-title"><ng-md-icon icon="my_location"></ng-md-icon> Location: </span>{{event.location}}
+          </span>
+          <span class="event-description">
+            <span class="event-info-title"><ng-md-icon icon="description"></ng-md-icon> Description: </span>{{event.description}}
+          </span>
+          <span class="event-participants">
+            <span class="event-info-title"><ng-md-icon icon="people"></ng-md-icon> Participants: </span><span ng-repeat="participant in event.participants">{{participant}}{{$last ? '' : ', '}}</span>
+          </span>
+        </div>
+        <span class="modification-buttons">
+          <md-button class="md-raised md-primary"><ng-md-icon icon="mode_edit"></ng-md-icon>Edit Event</md-button>
+          <md-button class="md-raised md-warn"><ng-md-icon icon="delete"></ng-md-icon>Delete Event</md-button>
+        </span>
       </div>
     </div>
   </div>

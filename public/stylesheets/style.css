@@ -38,6 +38,75 @@ body {
   font-weight: bold;
 }
 
+.event-time {
+  display: inline-block;
+  float: right;
+}
+
+.event-time ng-md-icon[icon='access_time'] {
+  height: 18px;
+  width: 18px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
+.event-time .from-date, .event-time .to-date {
+  font-size: 0.70rem;
+}
+
+.event-time .from-time, .event-time .to-time {
+  font-size: 0.65rem;
+}
+
+.from-date {
+  font-weight: bold;
+}
+
+.to-date {
+  font-weight: bold;
+}
+
+.collapse-card__body {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0rem;
+  padding-bottom: 3.5rem;
+}
+
+.event-information {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.event-information .event-location {
+  display: block;
+}
+
+.event-information .event-description {
+  display: block;
+}
+
+.event-information .event-participants {
+  display: block;
+}
+
+.event-information .event-location span.event-info-title {
+  font-weight: bold;
+}
+
+.event-information .event-description span.event-info-title {
+  font-weight: bold;
+}
+
+.event-information .event-participants span.event-info-title {
+  font-weight: bold;
+}
+
+.modification-buttons {
+  float: right;
+}
+
 /* Custom Styles for Date/Timer Picker */
 
 .time-date > .control > .slider > .date-control {

@@ -12,10 +12,13 @@
       this.events = events.data; /* Need this for rendering the list of suggested events. */
     }
 
+    console.log(this.events);
+
     this.deleteEvent = function(event_id){
       EventsService.deleteEvent(event_id);
     };
 
+    /* Need to initialize the collapsible items functionality after ALL have been rendered. */
     $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
       /* Initialize the paper collapsing featuring. */
       $('.collapse-card').paperCollapse();
