@@ -36,7 +36,7 @@
             <span class="event-info-title"><ng-md-icon icon="description"></ng-md-icon> Description: </span>{{event.description}}
           </span>
           <span class="event-participants">
-            <span class="event-info-title"><ng-md-icon icon="people"></ng-md-icon> Participants: </span><span ng-repeat="participant in event.participants">{{participant}}{{$last ? '' : ', '}}</span>
+            <span class="event-info-title"><ng-md-icon icon="people"></ng-md-icon> Participants: </span><span ng-repeat="participant in event.participants track by $index">{{participant}}{{$last ? '' : ', '}}</span>
           </span>
         </div>
         <span class="modification-buttons">

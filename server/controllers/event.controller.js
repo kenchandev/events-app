@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 /* Import the model created with Mongoose ODM. */
 var Event = require('../models/event.model');
 
@@ -7,7 +9,7 @@ var Event = require('../models/event.model');
 module.exports = {
 
   /**
-   *
+   * Helper function for getting all events within the MongoDB datebase.
    */
   list: function(req, res){
     Event.find(function(err, events){
@@ -19,8 +21,7 @@ module.exports = {
   },
 
   /**
-   *
-   *
+   * Helper function for creating a new event based on inputted data from form.
    */
   create: function(req, res){
     var data = req.body;
@@ -34,8 +35,7 @@ module.exports = {
   },
 
   /**
-   *
-   *
+   * Helper function for finding a particular event based on its unique _id value.
    */
   show: function(req, res){
     Event.findById(req.params.event_id, function(err, event){
@@ -50,16 +50,33 @@ module.exports = {
   },
 
   /**
-   *
-   *
+   * Helper function for updating an existing event.
    */
   update: function(req, res){
-    console.log(req.body);
+    //  Since the event ID is already provided as a request parameter, set the ID value within the body to this value to sync it.
+    req.body._id = req.params.event_id;
+    Event.findById(req.params.event_id, function(err, event){
+      if(err){
+        return res.send(500, err);
+      }
+      if(!event){
+        return res.send(404);
+      }
+      _.forIn(Event.schema.paths, function(value, key){
+        console.log('Key:', key);
+        event[key] = (key === 'to' || key === 'from' || key === 'createdOn') ? new Date(req.body[key]) : req.body[key];
+      });
+      event.save(function(err){
+        if(err){
+          return res.send(500, err);
+        }
+        return res.json(200, event);
+      });
+    });
   },
 
   /**
-   *
-   *
+   * Helper function for deleting a particular event based on its unique _id value.
    */
   delete: function(req, res){
     Event.findById(req.params.event_id, function(err, event){

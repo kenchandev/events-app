@@ -9,19 +9,17 @@
 
   function SuggestionsController($scope, $state, EventsService, events, event){
     if(events.status === 200){
-      this.events = _(events.data).reverse().value(); /* Need this for rendering the list of suggested events. */
+      this.events = _(events.data).reverse().value(); /* Need this for rendering the list of suggested events with the most recent at the top. */
     }
 
     console.log(this.events);
 
     /* Execute this when the delete button is clicked. */
     this.deleteEvent = function(index, event_id){
-      this.events = _.without(this.events, _.findWhere(this.events, {_id: event_id}));
-      // this.events.splice(index, 1); /* Two-way data binding helps to remove the UI element. */
-      console.log(this.events);
+      this.events = _.without(this.events, _.findWhere(this.events, {_id: event_id})); /* Two-way data binding helps to remove the UI element. */
       EventsService.deleteEvent(event_id)
                    .success(function(){
-                     $state.go('suggestions')
+                     $('.collapse-card').paperCollapse();
                    });
     };
 

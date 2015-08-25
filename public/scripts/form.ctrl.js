@@ -34,15 +34,19 @@
      */
     this.event = event.data || {};
 
-    console.log(this.event);
-
     this.saveEventInfo = function(){
-      //  Must reassemble participants into an array.
-      console.log(this.event);
+      //  Must reassemble participants (String) into an array.
+      this.event.participants = (this.event.participants) ? this.event.participants.split(', ') : [];
 
       //  Must convert time back to ISO format.
-      if(this.event.to) this.event.to = this.event.to.toISOString();
-      if(this.event.from) this.event.from = this.event.from.toISOString();
+      if(this.event.from){
+        var fromDateTime = new Date(this.event.from);
+        this.event.from = fromDateTime.toISOString();
+      }
+      if(this.event.to){
+        var toDateTime = new Date(this.event.to);
+        this.event.to = toDateTime.toISOString();
+      }
 
       /* If this event hasn't already been inserted into the MongoDB, do so. */
       if(!this.event._id){
