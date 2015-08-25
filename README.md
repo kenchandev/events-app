@@ -8,7 +8,7 @@ Events can be easily managed through this intuitive and interactive application!
 2. `npm install`
 3. `npm start`
 
-Inside of your favorite browser (preferable Chrome, Safari or Opera for reasons mentioned in the "Notes" section), navigate to `localhost:3000`. 
+Inside of your favorite browser (preferable Chrome, Safari or Opera for reasons mentioned in the "Notes" section), navigate to `localhost:3000`.
 
 ##  Notes
 
@@ -25,6 +25,7 @@ Inside of your favorite browser (preferable Chrome, Safari or Opera for reasons 
    http://stackoverflow.com/questions/25065699/why-does-angularjs-with-ui-router-keep-firing-the-statechangestart-event
 
 4. Date and time picker (datetime-local) feature works in Chrome, Safari and Opera only...
+   This is why the format yyyy-MM-ddTHH:mm:ss is provided within parenthese (for Firefox and Internet Explorer).
 
 ##  License
 

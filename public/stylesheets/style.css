@@ -82,6 +82,10 @@ body {
   font-weight: bold;
 }
 
+.from-date-time, .to-date-time {
+  display: inline-block;
+}
+
 .collapse-card__body {
   padding-left: 1rem;
   padding-right: 1rem;

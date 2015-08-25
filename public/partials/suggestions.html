@@ -19,12 +19,16 @@
           <ng-md-icon icon="event_available"></ng-md-icon>
           <span class="event-title">{{event.title}}</span> <!-- Title Text -->
           <span class="event-time">
-            <ng-md-icon icon="access_time"></ng-md-icon>
-            <span class="from-date">{{event.from | date:'mediumDate'}}</span>
-            <span class="from-time">{{event.from | date:'shortTime'}}</span>
+            <span class="from-date-time">
+              <ng-md-icon icon="access_time"></ng-md-icon>
+              <span class="from-date">{{event.from | date:'mediumDate'}}</span>
+              <span class="from-time">{{event.from | date:'shortTime'}}</span>
+            </span>
             -
-            <span class="to-date">{{event.to | date:'mediumDate'}}</span>
-            <span class="to-time">{{event.to | date:'shortTime'}}</span>
+            <span class="to-date-time">
+              <span class="to-date">{{event.to | date:'mediumDate'}}</span>
+              <span class="to-time">{{event.to | date:'shortTime'}}</span>
+            </span>
         </div>
       </div>
       <div class="collapse-card__body">
