@@ -7,8 +7,6 @@
   angular.module('app')
          .directive('navBarHeader', NavigationBar);
 
-  console.log('Inside Directive');
-
   /* Return a Directive Definition Object (DDO). */
   function NavigationBar(){
     return {
