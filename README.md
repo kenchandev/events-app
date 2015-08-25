@@ -1,6 +1,6 @@
 # Events Application
 
-Events can be easily managed through this intuitive and interactive application!
+Events can be easily managed through this intuitive and interactive application. The interface is responsive for mobile and desktop screens!
 
 ##  Usage
 
@@ -9,6 +9,14 @@ Events can be easily managed through this intuitive and interactive application!
 3. `npm start`
 
 Inside of your favorite browser (preferable Chrome, Safari or Opera for reasons mentioned in the "Notes" section), navigate to `localhost:3000`.
+
+This application's RESTful API endpoints were tested with Postman:
+
+- GET '/'
+- POST '/'
+- GET '/:event_id'
+- PUT '/:event_id'
+- DELETE '/:event_id'
 
 ##  Other Items to Finish
 
