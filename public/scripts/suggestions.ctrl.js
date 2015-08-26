@@ -12,13 +12,13 @@
       this.events = _(events.data).reverse().value(); /* Need this for rendering the list of suggested events with the most recent at the top. */
     }
 
-    console.log(this.events);
-
     /* Execute this when the delete button is clicked. */
     this.deleteEvent = function(index, event_id){
-      this.events = _.without(this.events, _.findWhere(this.events, {_id: event_id})); /* Two-way data binding helps to remove the UI element. */
+      var _this = this; /* Different reference of this inside of success callback. */
+
       EventsService.deleteEvent(event_id)
                    .success(function(){
+                     _this.events = _.without(_this.events, _.findWhere(_this.events, {_id: event_id})); /* Two-way data binding helps to remove the UI element. */
                      $('.collapse-card').paperCollapse();
                    });
     };
