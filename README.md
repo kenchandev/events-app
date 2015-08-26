@@ -8,7 +8,7 @@ Events can be easily managed through this intuitive and interactive application.
 2. `npm install`
 3. `npm start`
 
-Inside of your favorite browser (preferable Chrome, Safari or Opera for reasons mentioned in the "Notes" section), navigate to `localhost:3000`.
+Inside of your favorite browser (preferable Chrome, Safari or Opera for reasons mentioned in the "Notes" section), navigate to `localhost:8000`. To change the port, modify bin/www.
 
 This application's RESTful API endpoints were tested with Postman:
 
