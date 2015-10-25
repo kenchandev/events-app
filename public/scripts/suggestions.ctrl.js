@@ -19,19 +19,23 @@
       EventsService.deleteEvent(event_id)
                    .success(function(){
                      _this.events = _.without(_this.events, _.findWhere(_this.events, {_id: event_id})); /* Two-way data binding helps to remove the UI element. */
-                     $('.collapse-card').click(function(){ 
-                       return false;
-                     });
-                     $('.collapse-card').paperCollapse();
+                     setPaperCollapse();
                    });
     };
 
     /* Need to initialize the collapsible items functionality after ALL have been rendered. */
     $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
       /* Initialize the paper collapsing featuring. */
-      $('.collapse-card').paperCollapse();
+      setPaperCollapse();
     });
   };
+
+  function setPaperCollapse(){
+    $('.collapse-card').click(function(){
+      return false;
+    });
+    $('.collapse-card').paperCollapse();
+  }
 
   function renderComplete($timeout){
     return {
