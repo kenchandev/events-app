@@ -19,6 +19,9 @@
       EventsService.deleteEvent(event_id)
                    .success(function(){
                      _this.events = _.without(_this.events, _.findWhere(_this.events, {_id: event_id})); /* Two-way data binding helps to remove the UI element. */
+                     $('.collapse-card').click(function(){ 
+                       return false;
+                     });
                      $('.collapse-card').paperCollapse();
                    });
     };

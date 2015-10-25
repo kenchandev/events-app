@@ -32,5 +32,5 @@
   <!-- Navigate to state 'suggestions' with no params. -->
   <md-button ui-sref="suggestions" class="md-raised md-warn">Cancel</md-button>
   <!-- ng-disabled is based on interactions with inputs with the corresponding name attributes. -->
-  <md-button class="md-raised" style="background-color:#42bd41;" type="submit" ng-disabled="formCtrl.eventForm.$pristine && formCtrl.eventForm.$invalid">Submit</md-button>
+  <md-button class="md-raised" style="background-color:#42bd41; color:white;" type="submit" ng-disabled="formCtrl.eventForm.$pristine || formCtrl.eventForm.$invalid">Submit</md-button>
 </form>

@@ -40,6 +40,8 @@ This application's RESTful API endpoints were tested with Postman:
 4. Date and time picker (datetime-local) feature works in Chrome, Safari and Opera only...
    This is why the format yyyy-MM-ddTHH:mm:ss is provided within parenthese (for Firefox and Internet Explorer).
 
+5. Angular Materialize, at the time of this writing, does not feature an accordion widget. Instead, the paper-collapse library was utilized to display more information when expanded.
+
 ##  License
 
 MIT
