@@ -1,1 +1,5 @@
 node_modules
+public/bower_components
+.DS_Store
+server/.DS_Store
+public/.DS_Store

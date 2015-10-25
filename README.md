@@ -2,6 +2,8 @@
 
 Events can be easily managed through this intuitive and interactive application. The interface is responsive for mobile and desktop screens!
 
+![Alt text](https://github.com/KenChan23/events-app/blob/master/public/images/event-tracker-screenshot.png "Event Tracker")
+
 ##  Usage
 
 1. `bower install`
