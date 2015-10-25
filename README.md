@@ -20,7 +20,7 @@ This application's RESTful API endpoints were tested with Postman:
 
 ##  Other Items to Finish
 
-1. Implement tests using Protractor and Karma.
+1. Implement e2e and unit tests using Protractor and Karma respectively.
 2. Fix gulpfile.js file.
 
 ##  Notes
